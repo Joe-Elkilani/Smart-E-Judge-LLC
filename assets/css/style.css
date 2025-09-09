@@ -1,0 +1,525 @@
+/* ================================
+   Global Reset & Base Styles
+================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ================================
+   Header & Banner
+================================ */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.bnr {
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+  background: #2d3845;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bnr a {
+  color: #72c2ff;
+}
+
+/* ================================
+   Navbar
+================================ */
+.navbar {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 230px;
+}
+
+.logo img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ================================
+   Navigation Menu
+================================ */
+.nav {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav > div {
+  width: 990px;
+}
+
+.nav div {
+  display: flex;
+  align-items: center;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  position: relative;
+}
+
+.nav ul li {
+  position: relative;
+}
+
+.nav ul li a {
+  font-size: 14.7px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav ul li a.active,
+.nav ul li a:hover {
+  color: #72c2ff;
+}
+
+/* ================================
+   Dropdown (First level list)
+================================ */
+.list {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  min-width: 300px;
+  padding: 32px;
+  display: none !important;
+  flex-direction: column;
+  background: #2d3845;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.nav ul li:hover .list {
+  display: flex !important;
+}
+
+.list p {
+  margin: 0;
+  padding: 10px 0;
+  width: 100%;
+  font-size: 18px;
+  border-bottom: 1px solid #dddde1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list p a {
+  color: #fff;
+  font-weight: 600;
+  display: block;
+  transition: 0.3s;
+}
+
+.list p a:hover {
+  color: #72c2ff;
+}
+
+.arrow {
+  font-size: 14px;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.list p:hover .arrow {
+  transform: rotate(180deg);
+}
+
+/* ================================
+   Sub Dropdown (Second level list)
+================================ */
+.sub-list {
+  display: none !important;
+  margin-top: 5px;
+  padding-left: 15px;
+  background: #1f2933;
+}
+
+.sub-list p {
+  border: none;
+  font-size: 14px;
+}
+
+.list p:hover + .sub-list {
+  display: block !important;
+}
+
+/* ================================
+   Top Nav Section (Contacts)
+================================ */
+.nav .top {
+  padding: 10px;
+  border-bottom: 1px solid #ffffff1d;
+  justify-content: space-between;
+}
+
+.call span {
+  margin-right: 1rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.call a {
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: "Cantata One", serif;
+}
+
+/* ================================
+   Bottom Nav Section
+================================ */
+.bottom {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+/* ================================
+   Buttons in Navbar
+================================ */
+.nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 500ms;
+}
+
+.nav .btn {
+  margin-right: 20px;
+  padding: 1rem 1.667rem;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: #0065b3;
+  color: #fff;
+  transition: 500ms;
+}
+
+.nav .btn span {
+  font-size: 18px;
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+.nav .btn svg {
+  width: 40px;
+  height: 40px;
+  fill: #fff;
+  transition: 500ms;
+}
+
+.nav .btn:hover {
+  background: #fff;
+  color: #343434;
+}
+
+.nav .btn:hover svg {
+  fill: #343434;
+}
+
+/* ================================
+   Hero Section (Home)
+================================ */
+.home {
+  width: 100%;
+  min-height: 120vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../../public/imgs/home.jpg);
+  background-size: cover;
+}
+
+.home .container {
+  width: 80%;
+  height: 100%;
+  padding-top: 100px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.text {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.home h3 {
+  margin-top: -60px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.home strong {
+  margin-block: 28px;
+  font-size: 60px;
+  font-family: "Cantata One", serif;
+}
+
+.home p {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+/* ================================
+   Hero Section Button
+================================ */
+.home .btn {
+  width: fit-content;
+  padding: 1rem 1.667rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #0065b3;
+  color: #fff;
+  text-transform: uppercase;
+  transition: 500ms;
+}
+
+.home .btn span {
+  font-size: 18px;
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+.home .btn svg {
+  width: 40px;
+  height: 40px;
+  fill: #fff;
+  transition: 500ms;
+}
+
+.home .btn:hover {
+  background: #fff;
+  color: #343434;
+}
+
+.home .btn:hover svg {
+  fill: #343434;
+}
+
+/* ================================
+  Layout Section
+================================ */
+.layout {
+  background: #192c37;
+  padding: 0 0;
+}
+
+.layout .immigration {
+  background: #eee;
+  padding: 70px 60px 120px;
+  position: relative;
+  z-index: 2;
+  top: -160px;
+  width: 743.55px;
+}
+
+.layout svg {
+  fill: #0065b3;
+  width: 116.8px;
+  height: 116.8px;
+}
+
+.layout h2 {
+  color: #2D3845;
+  font-size: 45px;
+  font-family: "Cantata One", serif;
+  margin: 0 0 20px;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: 400;
+  word-break: break-word;
+}
+
+.layout h3 {
+  font-size: calc(1.7rem * 0.83);
+  letter-spacing: 0.15rem;
+  line-height: 1.5;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #0065b3;
+  margin: 1.2rem 0;
+}
+
+.layout .immigration p {
+  color: #343434;
+  font-size: 16.5px;
+  margin: 16.5px 0;
+  line-height: 1.8;
+}
+
+.layout .immigration p a ,
+.layout .immigration div a {
+  color: #0065b3;
+}
+
+.layout .immigration div {
+  margin: 41.5px 0 0;
+  padding: 26px;
+  text-align: center;
+  border-block: #0065b3 10px solid;
+  color: #343434;
+  font-size: 16.5px;
+  line-height: 1.8;
+}
+
+.layout .areas {
+  background: #2d3845;
+  padding: 58px 60px 100px;
+  position: absolute;
+  z-index: 5;
+  top: -135px;
+  right: 0;
+  width: 743.55px;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
+}
+
+.layout .areas h2 ,
+.layout .areas h3 {
+  color: #fff;
+}
+
+.layout .areas div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  transition: 500ms;
+  padding: 16.5px 0;
+}
+
+.layout .areas div:hover {
+  color: #72c2ff;
+}
+
+.layout .areas div svg {
+  fill: #72c2ff;
+  width: 41px;
+  height: 41px;
+  margin: 0 17px 0 0;
+}
+
+/* ================================
+  Immigration Section
+================================ */
+
+.immigration-sec .container {
+  padding: 112.5px 0;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 8rem;
+  align-items: center;
+}
+
+.immigration-sec .container svg {
+  fill: #0065b3;
+  width: 116px;
+  height: 116px;
+}
+
+.immigration-sec .container h2 {
+  margin: 0 0 19.5px;
+  font-size: 45px;
+  color: #0065b3;
+  font-family: "Cantata One", serif;
+  line-height: 1;
+  letter-spacing: 0;
+  font-weight: 400;
+  text-transform: none;
+  word-break: break-word;
+}
+
+.immigration-sec .container p {
+  margin: 16.5px 0;
+  font-size: 16.5px;
+  color: #343434;
+  line-height: 1.8;
+}
+
+.immigration-sec .container p strong {
+  font-size: 1rem;
+}
+
+.immigration-sec .container .text {
+  width: 627px;
+}
+
+.immigration-sec ul li {
+  padding: .1em 0 .1em 1.5em;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #343434;
+}
+
+.immigration-sec ul li::marker {
+  color: #0065b3;
+  font-size: 1.5rem;
+}
+
+.immigration-sec .text > p strong {
+  color: #343434;
+  margin: 41.5px 0 0;
+  padding: 31px;
+  display: block;
+  border-left: #0065b3 10px solid;
+  font-weight: bolder;
+  line-height: 1.8;
+}
+
+.video {
+  width: 627px;
+  height: 365px;
+}
+
+.obs {
+  position: relative;
+}
