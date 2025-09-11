@@ -1019,7 +1019,7 @@ a {
   opacity: 0.9;
 }
 
-.proud-sec .cards .hr {
+.hr {
   height: 215px;
   width: 2px;
   background: #ffffff80;
@@ -1354,6 +1354,11 @@ a {
   text-align: center;
 }
 
+.img2 img {
+  width: 300px;
+  object-fit: cover;
+}
+
 .co-so .img {
   width: 230px;
 }
@@ -1387,6 +1392,36 @@ a {
 }
 
 .div3 h5:hover {
+  color: #fff;
+}
+
+.co-fo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.co-fo .di {
+  width: 630px;
+}
+
+.co-fo h3 {
+  font-size: 17px;
+  margin: 0 0 9px;
+}
+
+.co-fo address {
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.co-fo a {
+  color: #72c2ff;
+  transition: 500ms;
+}
+
+.co-fo a:hover {
   color: #fff;
 }
 
