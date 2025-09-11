@@ -1312,6 +1312,84 @@ a {
   background: #000;
 }
 
+/* Contact */
+
+.contact {
+  padding: 58px 0;
+  background: #1a2d39;
+  color: #fff;
+  text-align: center;
+}
+
+.contact h3 {
+  margin-bottom: 17px;
+}
+
+.co-nav nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ffffff80;
+  list-style: none;
+  padding-bottom: 30px;
+  margin-bottom: 78px;
+}
+
+.co-nav nav ul li {
+  transition: 500ms;
+}
+
+.co-nav nav ul li:hover {
+  color: #72c2ff;
+}
+
+.co-so {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.img2 {
+  text-align: center;
+}
+
+.co-so .img {
+  width: 230px;
+}
+
+.co-so .img img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.co-so .social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.co-so .social svg {
+  fill: #72c2ff;
+  width: 23px;
+  transition: 500ms;
+  height: 23px;
+}
+
+.co-so .social svg:hover {
+  fill: #fff;
+}
+
+.div3 h5 {
+  color: #72c2ff;
+  transition: 500ms;
+}
+
+.div3 h5:hover {
+  color: #fff;
+}
+
 /* Footer */
 footer {
   background: #000;
