@@ -14,6 +14,7 @@ class TestimonialSlider {
     }
 
     init() {
+        if (!this.section) return; // حماية لو id مش موجود
         this.createDots();
         this.bindEvents();
         this.goToSlide(0);
@@ -23,22 +24,34 @@ class TestimonialSlider {
     createDots() {
         this.dotsContainer.innerHTML = '';
         for (let i = 0; i < this.totalSlides; i++) {
-            const dot = document.createElement('div');
+            const dot = document.createElement('button');
             dot.classList.add('dot');
             if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => this.goToSlide(i));
+            dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+            dot.addEventListener('click', () => {
+                this.goToSlide(i);
+                this.restartAutoPlay();
+            });
             this.dotsContainer.appendChild(dot);
         }
     }
 
     bindEvents() {
-        this.prevBtn.addEventListener('click', () => this.previousSlide());
-        this.nextBtn.addEventListener('click', () => this.nextSlide());
+        this.prevBtn.addEventListener('click', () => {
+            this.previousSlide();
+            this.restartAutoPlay();
+        });
+
+        this.nextBtn.addEventListener('click', () => {
+            this.nextSlide();
+            this.restartAutoPlay();
+        });
     }
 
     goToSlide(index) {
         this.testimonials.forEach(t => t.classList.remove('active'));
         this.dotsContainer.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
+
         this.currentIndex = index;
         this.testimonials[this.currentIndex].classList.add('active');
         this.dotsContainer.querySelectorAll('.dot')[this.currentIndex].classList.add('active');
@@ -57,6 +70,11 @@ class TestimonialSlider {
         this.autoPlayInterval = setInterval(() => this.nextSlide(), this.autoPlayDelay);
     }
 
+    restartAutoPlay() {
+        this.stopAutoPlay();
+        this.startAutoPlay();
+    }
+
     stopAutoPlay() {
         if (this.autoPlayInterval) clearInterval(this.autoPlayInterval);
     }
@@ -67,6 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
     new TestimonialSlider("clients1", "prevBtn", "nextBtn", "dotsContainer");
     new TestimonialSlider("clients2", "prevBtn2", "nextBtn2", "dotsContainer2");
 });
+
+// Init AOS Animations
 AOS.init({
     duration: 1000,
     once: true

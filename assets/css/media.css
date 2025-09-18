@@ -1,101 +1,83 @@
-/* ================================
-   Responsive Design
-================================ */
-
-/* Tablets & small laptops */
-@media (max-width: 992px) {
-  .navbar {
-    width: 90%;
-  }
-
-  .nav > div {
+@media screen and (max-width: 900px) {
+  .container {
     width: 100%;
+    padding: 0 20px;
+  }
+  .layout {
+    padding: 25px;
   }
 
-  .nav ul {
-    gap: 10px;
+  .layout .immigration {
+    margin-bottom: 20px;
   }
 
-  .list {
-    min-width: 220px;
-    padding: 15px;
-  }
-}
-
-/* Mobiles */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .nav {
+  .layout .immigration,
+  .layout .areas {
+    position: relative;
     width: 100%;
-    gap: 10px;
-  }
-
-  .nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-    width: 100%;
-  }
-
-  .nav ul li {
-    width: 100%;
-  }
-
-  .nav ul li a {
-    font-size: 16px;
-    padding: 10px 0;
-    display: block;
-    width: 100%;
-  }
-
-  /* dropdown inside mobile */
-  .list {
-    position: static;
-    width: 100%;
+    top: 0;
     box-shadow: none;
-    padding: 10px 0;
   }
 
-  .sub-list {
-    padding-left: 20px;
+  .expertise .cards {
+    flex-wrap: wrap;
   }
 
-  /* Buttons in mobile */
-  .nav .btn {
-    width: 100%;
+  .expertise .cards .card {
+    width: 400px;
+    margin: 20px 0;
+  }
+
+  .immigration-sec .container {
+    display: flex;
     justify-content: center;
-    margin: 10px 0 0 0;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 
-  .home strong {
-    font-size: 36px;
+  .immigration-sec .container > div {
+    width: 100%;
   }
 
-  .home p {
-    font-size: 16px;
-  }
-}
-
-/* Extra small mobiles */
-@media (max-width: 480px) {
-  .logo {
-    width: 180px;
+  .immigration-sec .video {
+    margin-top: 50px;
+    top: 0;
   }
 
-  .home strong {
-    font-size: 28px;
+  .empowerment .cards .card:last-of-type {
+    width: 820px;
   }
 
-  .home p {
-    font-size: 14px;
+  .first-step .container .img {
+    display: none;
   }
 
-  .nav ul li a {
-    font-size: 14px;
+  .immigratIoninsights .cards {
+    flex-wrap: wrap;
+  }
+  
+  .immigratIoninsights .cards .card {
+    width: 400px;
+    margin: 20px 0;
+  }
+
+  .hr {
+    display: none;
+  }
+
+  .contact .co-so {
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .contact .co-fo {
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
   }
 }
