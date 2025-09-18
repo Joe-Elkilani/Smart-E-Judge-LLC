@@ -22,6 +22,19 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  scrollbar-color: #dc3545 #f1f1f1;
+}
+
+::-webkit-scrollbar-track {
+  background: #dc3545;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dc3545;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f28b94;
 }
 
 body {
@@ -1476,6 +1489,8 @@ footer .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 footer .an {
@@ -1508,4 +1523,22 @@ footer .an a {
 footer .an a:hover {
   color: var(--l-main-color);
   text-decoration: underline var(--l-main-color);
+}
+
+.top-bt {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--d-main-color);
+  color: #fff;
+  border: #fff 2px solid;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
 }

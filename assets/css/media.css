@@ -45,8 +45,32 @@
     top: 0;
   }
 
-  .empowerment .cards .card:last-of-type {
-    width: 820px;
+  .proud-sec .cards {
+    justify-content: center;
+  }
+
+  .first-step form {
+    width: 100%;
+  }
+
+  .first-step form .inp-group {
+    width: 300px;
+  }
+
+  .first-step form .inp-group input {
+    width: 150px;
+  }
+
+  .first-step form textarea {
+    width: 300px !important;
+  }
+
+  .first-step form select {
+    width: 300px !important;
+  }
+
+  .first-step form p {
+    width: 310px;
   }
 
   .first-step .container .img {

@@ -91,3 +91,28 @@ AOS.init({
     duration: 1000,
     once: true
 });
+
+let typed = new Typed('#name', {
+    strings: ["Smart Immigration Solution", "Smart Immigration Solution", "Smart Immigration Solution", "Smart Immigration Solution"],
+    typeSpeed: 100,
+    backSpeed: 50,
+    backDelay: 2000,
+    loop: true,
+    showCursor: true,
+    cursorChar: '|'
+});
+
+let btn = document.getElementById("scrollToTopBtn");
+window.onscroll = function() { scrollFunction(); };
+function scrollFunction() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        btn.style.display = "flex";
+    }
+    else {
+        btn.style.display = "none";
+    }
+}
+btn.addEventListener('click', function() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});
